@@ -1,0 +1,732 @@
+{
+  "dataset": "ai4privacy/pii-masking-300k",
+  "dataset_fingerprint": "7dcf72ef576ca7d9",
+  "label_map": {
+    "BOD": "DATE_OF_BIRTH",
+    "CITY": "LOCATION",
+    "COUNTRY": "LOCATION",
+    "EMAIL": "EMAIL",
+    "GIVENNAME1": "PERSON",
+    "GIVENNAME2": "PERSON",
+    "IP": "IPV4",
+    "LASTNAME1": "PERSON",
+    "LASTNAME2": "PERSON",
+    "LASTNAME3": "PERSON",
+    "PASS": "SECRET",
+    "SOCIALNUMBER": "SSN",
+    "STATE": "LOCATION",
+    "STREET": "STREET_ADDRESS",
+    "TEL": "US_PHONE"
+  },
+  "language": "English",
+  "modes": {
+    "ner": {
+      "exact": {
+        "f1": 0.377160030052592,
+        "fn": 2469,
+        "fp": 847,
+        "per_category": {
+          "DATE_OF_BIRTH": {
+            "f1": 0.14893617021276595,
+            "fn": 240,
+            "fp": 0,
+            "precision": 1.0,
+            "recall": 0.08045977011494253,
+            "tp": 21
+          },
+          "EMAIL": {
+            "f1": 0.8932038834951457,
+            "fn": 38,
+            "fp": 50,
+            "precision": 0.8803827751196173,
+            "recall": 0.9064039408866995,
+            "tp": 368
+          },
+          "IPV4": {
+            "f1": 0.6846846846846847,
+            "fn": 136,
+            "fp": 4,
+            "precision": 0.9743589743589743,
+            "recall": 0.5277777777777778,
+            "tp": 152
+          },
+          "LOCATION": {
+            "f1": 0.3505355404089581,
+            "fn": 526,
+            "fp": 141,
+            "precision": 0.5607476635514018,
+            "recall": 0.254957507082153,
+            "tp": 180
+          },
+          "PAYMENT_CARD": {
+            "f1": 0.0,
+            "fn": 0,
+            "fp": 11,
+            "precision": 0.0,
+            "recall": 0.0,
+            "tp": 0
+          },
+          "PERSON": {
+            "f1": 0.15246636771300448,
+            "fn": 698,
+            "fp": 436,
+            "precision": 0.1895910780669145,
+            "recall": 0.1275,
+            "tp": 102
+          },
+          "SCHOOL": {
+            "f1": 0.0,
+            "fn": 0,
+            "fp": 13,
+            "precision": 0.0,
+            "recall": 0.0,
+            "tp": 0
+          },
+          "SECRET": {
+            "f1": 0.37174721189591076,
+            "fn": 140,
+            "fp": 29,
+            "precision": 0.6329113924050633,
+            "recall": 0.2631578947368421,
+            "tp": 50
+          },
+          "SSN": {
+            "f1": 0.5409090909090909,
+            "fn": 199,
+            "fp": 3,
+            "precision": 0.9754098360655737,
+            "recall": 0.3742138364779874,
+            "tp": 119
+          },
+          "STREET_ADDRESS": {
+            "f1": 0.0,
+            "fn": 242,
+            "fp": 8,
+            "precision": 0.0,
+            "recall": 0.0,
+            "tp": 0
+          },
+          "US_PHONE": {
+            "f1": 0.056338028169014086,
+            "fn": 250,
+            "fp": 152,
+            "precision": 0.07317073170731707,
+            "recall": 0.04580152671755725,
+            "tp": 12
+          }
+        },
+        "precision": 0.5424095083738519,
+        "recall": 0.2890872444572416,
+        "tp": 1004
+      },
+      "false_positive_negative_messages": 22,
+      "messages": 1000,
+      "negative_fpr": 0.20952380952380953,
+      "negative_messages": 105,
+      "not_covered": {
+        "BUILDING": 246,
+        "DATE": 190,
+        "DRIVERLICENSE": 336,
+        "GEOCOORD": 18,
+        "IDCARD": 371,
+        "PASSPORT": 304,
+        "POSTCODE": 232,
+        "SECADDRESS": 100,
+        "SEX": 260,
+        "TIME": 473,
+        "TITLE": 258,
+        "USERNAME": 312
+      },
+      "observed_labels": {
+        "BOD": 261,
+        "BUILDING": 246,
+        "CITY": 255,
+        "COUNTRY": 200,
+        "DATE": 190,
+        "DRIVERLICENSE": 336,
+        "EMAIL": 406,
+        "GEOCOORD": 18,
+        "GIVENNAME1": 278,
+        "GIVENNAME2": 78,
+        "IDCARD": 371,
+        "IP": 288,
+        "LASTNAME1": 346,
+        "LASTNAME2": 82,
+        "LASTNAME3": 16,
+        "PASS": 190,
+        "PASSPORT": 304,
+        "POSTCODE": 232,
+        "SECADDRESS": 100,
+        "SEX": 260,
+        "SOCIALNUMBER": 318,
+        "STATE": 251,
+        "STREET": 242,
+        "TEL": 262,
+        "TIME": 473,
+        "TITLE": 258,
+        "USERNAME": 312
+      },
+      "overlap": {
+        "f1": 0.4417731029301277,
+        "fn": 2297,
+        "fp": 675,
+        "per_category": {
+          "DATE_OF_BIRTH": {
+            "f1": 0.14893617021276595,
+            "fn": 240,
+            "fp": 0,
+            "precision": 1.0,
+            "recall": 0.08045977011494253,
+            "tp": 21
+          },
+          "EMAIL": {
+            "f1": 0.9830097087378641,
+            "fn": 1,
+            "fp": 13,
+            "precision": 0.9688995215311005,
+            "recall": 0.9975369458128078,
+            "tp": 405
+          },
+          "IPV4": {
+            "f1": 0.6846846846846847,
+            "fn": 136,
+            "fp": 4,
+            "precision": 0.9743589743589743,
+            "recall": 0.5277777777777778,
+            "tp": 152
+          },
+          "LOCATION": {
+            "f1": 0.3661148977604674,
+            "fn": 518,
+            "fp": 133,
+            "precision": 0.5856697819314641,
+            "recall": 0.26628895184135976,
+            "tp": 188
+          },
+          "PAYMENT_CARD": {
+            "f1": 0.0,
+            "fn": 0,
+            "fp": 11,
+            "precision": 0.0,
+            "recall": 0.0,
+            "tp": 0
+          },
+          "PERSON": {
+            "f1": 0.25112107623318386,
+            "fn": 632,
+            "fp": 370,
+            "precision": 0.31226765799256506,
+            "recall": 0.21,
+            "tp": 168
+          },
+          "SCHOOL": {
+            "f1": 0.0,
+            "fn": 0,
+            "fp": 13,
+            "precision": 0.0,
+            "recall": 0.0,
+            "tp": 0
+          },
+          "SECRET": {
+            "f1": 0.5724907063197026,
+            "fn": 113,
+            "fp": 2,
+            "precision": 0.9746835443037974,
+            "recall": 0.4052631578947368,
+            "tp": 77
+          },
+          "SSN": {
+            "f1": 0.5409090909090909,
+            "fn": 199,
+            "fp": 3,
+            "precision": 0.9754098360655737,
+            "recall": 0.3742138364779874,
+            "tp": 119
+          },
+          "STREET_ADDRESS": {
+            "f1": 0.032,
+            "fn": 238,
+            "fp": 4,
+            "precision": 0.5,
+            "recall": 0.01652892561983471,
+            "tp": 4
+          },
+          "US_PHONE": {
+            "f1": 0.19718309859154928,
+            "fn": 220,
+            "fp": 122,
+            "precision": 0.25609756097560976,
+            "recall": 0.16030534351145037,
+            "tp": 42
+          }
+        },
+        "precision": 0.6353322528363047,
+        "recall": 0.3386121508782033,
+        "tp": 1176
+      }
+    },
+    "regex": {
+      "exact": {
+        "f1": 0.32427576914439704,
+        "fn": 2751,
+        "fp": 258,
+        "per_category": {
+          "DATE_OF_BIRTH": {
+            "f1": 0.14893617021276595,
+            "fn": 240,
+            "fp": 0,
+            "precision": 1.0,
+            "recall": 0.08045977011494253,
+            "tp": 21
+          },
+          "EMAIL": {
+            "f1": 0.8932038834951457,
+            "fn": 38,
+            "fp": 50,
+            "precision": 0.8803827751196173,
+            "recall": 0.9064039408866995,
+            "tp": 368
+          },
+          "IPV4": {
+            "f1": 0.6846846846846847,
+            "fn": 136,
+            "fp": 4,
+            "precision": 0.9743589743589743,
+            "recall": 0.5277777777777778,
+            "tp": 152
+          },
+          "LOCATION": {
+            "f1": 0.0,
+            "fn": 706,
+            "fp": 0,
+            "precision": 0.0,
+            "recall": 0.0,
+            "tp": 0
+          },
+          "PAYMENT_CARD": {
+            "f1": 0.0,
+            "fn": 0,
+            "fp": 11,
+            "precision": 0.0,
+            "recall": 0.0,
+            "tp": 0
+          },
+          "PERSON": {
+            "f1": 0.0,
+            "fn": 800,
+            "fp": 0,
+            "precision": 0.0,
+            "recall": 0.0,
+            "tp": 0
+          },
+          "SECRET": {
+            "f1": 0.37174721189591076,
+            "fn": 140,
+            "fp": 29,
+            "precision": 0.6329113924050633,
+            "recall": 0.2631578947368421,
+            "tp": 50
+          },
+          "SSN": {
+            "f1": 0.5409090909090909,
+            "fn": 199,
+            "fp": 3,
+            "precision": 0.9754098360655737,
+            "recall": 0.3742138364779874,
+            "tp": 119
+          },
+          "STREET_ADDRESS": {
+            "f1": 0.0,
+            "fn": 242,
+            "fp": 8,
+            "precision": 0.0,
+            "recall": 0.0,
+            "tp": 0
+          },
+          "US_PHONE": {
+            "f1": 0.05620608899297424,
+            "fn": 250,
+            "fp": 153,
+            "precision": 0.07272727272727272,
+            "recall": 0.04580152671755725,
+            "tp": 12
+          }
+        },
+        "precision": 0.736734693877551,
+        "recall": 0.20788943276706018,
+        "tp": 722
+      },
+      "false_positive_negative_messages": 1,
+      "messages": 1000,
+      "negative_fpr": 0.009523809523809525,
+      "negative_messages": 105,
+      "not_covered": {
+        "BUILDING": 246,
+        "DATE": 190,
+        "DRIVERLICENSE": 336,
+        "GEOCOORD": 18,
+        "IDCARD": 371,
+        "PASSPORT": 304,
+        "POSTCODE": 232,
+        "SECADDRESS": 100,
+        "SEX": 260,
+        "TIME": 473,
+        "TITLE": 258,
+        "USERNAME": 312
+      },
+      "observed_labels": {
+        "BOD": 261,
+        "BUILDING": 246,
+        "CITY": 255,
+        "COUNTRY": 200,
+        "DATE": 190,
+        "DRIVERLICENSE": 336,
+        "EMAIL": 406,
+        "GEOCOORD": 18,
+        "GIVENNAME1": 278,
+        "GIVENNAME2": 78,
+        "IDCARD": 371,
+        "IP": 288,
+        "LASTNAME1": 346,
+        "LASTNAME2": 82,
+        "LASTNAME3": 16,
+        "PASS": 190,
+        "PASSPORT": 304,
+        "POSTCODE": 232,
+        "SECADDRESS": 100,
+        "SEX": 260,
+        "SOCIALNUMBER": 318,
+        "STATE": 251,
+        "STREET": 242,
+        "TEL": 262,
+        "TIME": 473,
+        "TITLE": 258,
+        "USERNAME": 312
+      },
+      "overlap": {
+        "f1": 0.36829103974848415,
+        "fn": 2653,
+        "fp": 160,
+        "per_category": {
+          "DATE_OF_BIRTH": {
+            "f1": 0.14893617021276595,
+            "fn": 240,
+            "fp": 0,
+            "precision": 1.0,
+            "recall": 0.08045977011494253,
+            "tp": 21
+          },
+          "EMAIL": {
+            "f1": 0.9830097087378641,
+            "fn": 1,
+            "fp": 13,
+            "precision": 0.9688995215311005,
+            "recall": 0.9975369458128078,
+            "tp": 405
+          },
+          "IPV4": {
+            "f1": 0.6846846846846847,
+            "fn": 136,
+            "fp": 4,
+            "precision": 0.9743589743589743,
+            "recall": 0.5277777777777778,
+            "tp": 152
+          },
+          "LOCATION": {
+            "f1": 0.0,
+            "fn": 706,
+            "fp": 0,
+            "precision": 0.0,
+            "recall": 0.0,
+            "tp": 0
+          },
+          "PAYMENT_CARD": {
+            "f1": 0.0,
+            "fn": 0,
+            "fp": 11,
+            "precision": 0.0,
+            "recall": 0.0,
+            "tp": 0
+          },
+          "PERSON": {
+            "f1": 0.0,
+            "fn": 800,
+            "fp": 0,
+            "precision": 0.0,
+            "recall": 0.0,
+            "tp": 0
+          },
+          "SECRET": {
+            "f1": 0.5724907063197026,
+            "fn": 113,
+            "fp": 2,
+            "precision": 0.9746835443037974,
+            "recall": 0.4052631578947368,
+            "tp": 77
+          },
+          "SSN": {
+            "f1": 0.5409090909090909,
+            "fn": 199,
+            "fp": 3,
+            "precision": 0.9754098360655737,
+            "recall": 0.3742138364779874,
+            "tp": 119
+          },
+          "STREET_ADDRESS": {
+            "f1": 0.032,
+            "fn": 238,
+            "fp": 4,
+            "precision": 0.5,
+            "recall": 0.01652892561983471,
+            "tp": 4
+          },
+          "US_PHONE": {
+            "f1": 0.19672131147540983,
+            "fn": 220,
+            "fp": 123,
+            "precision": 0.2545454545454545,
+            "recall": 0.16030534351145037,
+            "tp": 42
+          }
+        },
+        "precision": 0.8367346938775511,
+        "recall": 0.23610711200691045,
+        "tp": 820
+      }
+    },
+    "v2": {
+      "exact": {
+        "f1": 0.29364161849710985,
+        "fn": 2838,
+        "fp": 217,
+        "per_category": {
+          "DATE_OF_BIRTH": {
+            "f1": 0.0,
+            "fn": 261,
+            "fp": 0,
+            "precision": 0.0,
+            "recall": 0.0,
+            "tp": 0
+          },
+          "EMAIL": {
+            "f1": 0.8932038834951457,
+            "fn": 38,
+            "fp": 50,
+            "precision": 0.8803827751196173,
+            "recall": 0.9064039408866995,
+            "tp": 368
+          },
+          "IPV4": {
+            "f1": 0.6846846846846847,
+            "fn": 136,
+            "fp": 4,
+            "precision": 0.9743589743589743,
+            "recall": 0.5277777777777778,
+            "tp": 152
+          },
+          "LOCATION": {
+            "f1": 0.0,
+            "fn": 706,
+            "fp": 0,
+            "precision": 0.0,
+            "recall": 0.0,
+            "tp": 0
+          },
+          "PAYMENT_CARD": {
+            "f1": 0.0,
+            "fn": 0,
+            "fp": 11,
+            "precision": 0.0,
+            "recall": 0.0,
+            "tp": 0
+          },
+          "PERSON": {
+            "f1": 0.0,
+            "fn": 800,
+            "fp": 0,
+            "precision": 0.0,
+            "recall": 0.0,
+            "tp": 0
+          },
+          "SECRET": {
+            "f1": 0.0,
+            "fn": 190,
+            "fp": 0,
+            "precision": 0.0,
+            "recall": 0.0,
+            "tp": 0
+          },
+          "SSN": {
+            "f1": 0.5150812064965197,
+            "fn": 207,
+            "fp": 2,
+            "precision": 0.9823008849557522,
+            "recall": 0.3490566037735849,
+            "tp": 111
+          },
+          "STREET_ADDRESS": {
+            "f1": 0.0,
+            "fn": 242,
+            "fp": 0,
+            "precision": 0.0,
+            "recall": 0.0,
+            "tp": 0
+          },
+          "US_PHONE": {
+            "f1": 0.019230769230769232,
+            "fn": 258,
+            "fp": 150,
+            "precision": 0.025974025974025976,
+            "recall": 0.015267175572519083,
+            "tp": 4
+          }
+        },
+        "precision": 0.7453051643192489,
+        "recall": 0.18283904405413187,
+        "tp": 635
+      },
+      "false_positive_negative_messages": 1,
+      "messages": 1000,
+      "negative_fpr": 0.009523809523809525,
+      "negative_messages": 105,
+      "not_covered": {
+        "BUILDING": 246,
+        "DATE": 190,
+        "DRIVERLICENSE": 336,
+        "GEOCOORD": 18,
+        "IDCARD": 371,
+        "PASSPORT": 304,
+        "POSTCODE": 232,
+        "SECADDRESS": 100,
+        "SEX": 260,
+        "TIME": 473,
+        "TITLE": 258,
+        "USERNAME": 312
+      },
+      "observed_labels": {
+        "BOD": 261,
+        "BUILDING": 246,
+        "CITY": 255,
+        "COUNTRY": 200,
+        "DATE": 190,
+        "DRIVERLICENSE": 336,
+        "EMAIL": 406,
+        "GEOCOORD": 18,
+        "GIVENNAME1": 278,
+        "GIVENNAME2": 78,
+        "IDCARD": 371,
+        "IP": 288,
+        "LASTNAME1": 346,
+        "LASTNAME2": 82,
+        "LASTNAME3": 16,
+        "PASS": 190,
+        "PASSPORT": 304,
+        "POSTCODE": 232,
+        "SECADDRESS": 100,
+        "SEX": 260,
+        "SOCIALNUMBER": 318,
+        "STATE": 251,
+        "STREET": 242,
+        "TEL": 262,
+        "TIME": 473,
+        "TITLE": 258,
+        "USERNAME": 312
+      },
+      "overlap": {
+        "f1": 0.32508670520231214,
+        "fn": 2770,
+        "fp": 149,
+        "per_category": {
+          "DATE_OF_BIRTH": {
+            "f1": 0.0,
+            "fn": 261,
+            "fp": 0,
+            "precision": 0.0,
+            "recall": 0.0,
+            "tp": 0
+          },
+          "EMAIL": {
+            "f1": 0.9830097087378641,
+            "fn": 1,
+            "fp": 13,
+            "precision": 0.9688995215311005,
+            "recall": 0.9975369458128078,
+            "tp": 405
+          },
+          "IPV4": {
+            "f1": 0.6846846846846847,
+            "fn": 136,
+            "fp": 4,
+            "precision": 0.9743589743589743,
+            "recall": 0.5277777777777778,
+            "tp": 152
+          },
+          "LOCATION": {
+            "f1": 0.0,
+            "fn": 706,
+            "fp": 0,
+            "precision": 0.0,
+            "recall": 0.0,
+            "tp": 0
+          },
+          "PAYMENT_CARD": {
+            "f1": 0.0,
+            "fn": 0,
+            "fp": 11,
+            "precision": 0.0,
+            "recall": 0.0,
+            "tp": 0
+          },
+          "PERSON": {
+            "f1": 0.0,
+            "fn": 800,
+            "fp": 0,
+            "precision": 0.0,
+            "recall": 0.0,
+            "tp": 0
+          },
+          "SECRET": {
+            "f1": 0.0,
+            "fn": 190,
+            "fp": 0,
+            "precision": 0.0,
+            "recall": 0.0,
+            "tp": 0
+          },
+          "SSN": {
+            "f1": 0.5150812064965197,
+            "fn": 207,
+            "fp": 2,
+            "precision": 0.9823008849557522,
+            "recall": 0.3490566037735849,
+            "tp": 111
+          },
+          "STREET_ADDRESS": {
+            "f1": 0.0,
+            "fn": 242,
+            "fp": 0,
+            "precision": 0.0,
+            "recall": 0.0,
+            "tp": 0
+          },
+          "US_PHONE": {
+            "f1": 0.16826923076923078,
+            "fn": 227,
+            "fp": 119,
+            "precision": 0.22727272727272727,
+            "recall": 0.13358778625954199,
+            "tp": 35
+          }
+        },
+        "precision": 0.8251173708920188,
+        "recall": 0.2024186582205586,
+        "tp": 703
+      }
+    }
+  },
+  "ner_available": true,
+  "requested_n": 1000,
+  "sample_n": 1000,
+  "seed": 20261115,
+  "split": "validation"
+}

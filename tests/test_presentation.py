@@ -1,7 +1,7 @@
 from html.parser import HTMLParser
 import pytest
-from components.inspector import original_preview, outgoing_preview, occurrence_count
-from components.evidence import display_metrics, negative_pass_rate
+from legacy.inspector import original_preview, outgoing_preview, occurrence_count
+from legacy.evidence import display_metrics, negative_pass_rate
 from detector import Finding, SensitivePhrase, detect
 from evaluation import NEGATIVE_CONTROLS, evaluate
 from policy import POLICIES

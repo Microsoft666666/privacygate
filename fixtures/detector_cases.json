@@ -1,0 +1,305 @@
+[
+  {
+    "id": "email-0",
+    "text": "Email alex@example.com.",
+    "expected": [
+      {
+        "category": "EMAIL",
+        "start": 6,
+        "end": 22
+      }
+    ],
+    "targets": [
+      "python",
+      "js"
+    ]
+  },
+  {
+    "id": "us_phone-1",
+    "text": "Call 949-555-0134.",
+    "expected": [
+      {
+        "category": "US_PHONE",
+        "start": 5,
+        "end": 17
+      }
+    ],
+    "targets": [
+      "python",
+      "js"
+    ]
+  },
+  {
+    "id": "intl_phone-2",
+    "text": "Call +44 20 7946 0958.",
+    "expected": [
+      {
+        "category": "INTL_PHONE",
+        "start": 5,
+        "end": 21
+      }
+    ],
+    "targets": [
+      "python",
+      "js"
+    ]
+  },
+  {
+    "id": "intl_phone-3",
+    "text": "我的手机是 13800138000.",
+    "expected": [
+      {
+        "category": "INTL_PHONE",
+        "start": 6,
+        "end": 17
+      }
+    ],
+    "targets": [
+      "python",
+      "js"
+    ]
+  },
+  {
+    "id": "ssn-4",
+    "text": "SSN 123-45-6789.",
+    "expected": [
+      {
+        "category": "SSN",
+        "start": 4,
+        "end": 15
+      }
+    ],
+    "targets": [
+      "python",
+      "js"
+    ]
+  },
+  {
+    "id": "ssn-5",
+    "text": "SSN 123456789.",
+    "expected": [
+      {
+        "category": "SSN",
+        "start": 4,
+        "end": 13
+      }
+    ],
+    "targets": [
+      "python",
+      "js"
+    ]
+  },
+  {
+    "id": "payment_card-6",
+    "text": "Card 4111 1111 1111 1111.",
+    "expected": [
+      {
+        "category": "PAYMENT_CARD",
+        "start": 5,
+        "end": 24
+      }
+    ],
+    "targets": [
+      "python",
+      "js"
+    ]
+  },
+  {
+    "id": "ipv4-7",
+    "text": "Server 192.168.1.10.",
+    "expected": [
+      {
+        "category": "IPV4",
+        "start": 7,
+        "end": 19
+      }
+    ],
+    "targets": [
+      "python",
+      "js"
+    ]
+  },
+  {
+    "id": "bank_account-8",
+    "text": "Routing 011000015.",
+    "expected": [
+      {
+        "category": "BANK_ACCOUNT",
+        "start": 8,
+        "end": 17
+      }
+    ],
+    "targets": [
+      "python",
+      "js"
+    ]
+  },
+  {
+    "id": "bank_account-9",
+    "text": "Account 000123456789.",
+    "expected": [
+      {
+        "category": "BANK_ACCOUNT",
+        "start": 8,
+        "end": 20
+      }
+    ],
+    "targets": [
+      "python",
+      "js"
+    ]
+  },
+  {
+    "id": "bank_account-10",
+    "text": "IBAN GB82 WEST 1234 5698 7654 32.",
+    "expected": [
+      {
+        "category": "BANK_ACCOUNT",
+        "start": 5,
+        "end": 32
+      }
+    ],
+    "targets": [
+      "python",
+      "js"
+    ]
+  },
+  {
+    "id": "secret-11",
+    "text": "Token {{GH_TOKEN}}.",
+    "expected": [
+      {
+        "category": "SECRET",
+        "start": 6,
+        "end": 46
+      }
+    ],
+    "targets": [
+      "python",
+      "js"
+    ]
+  },
+  {
+    "id": "secret-12",
+    "text": "postgres://app:pwpwpwpwpw@localhost/app",
+    "expected": [
+      {
+        "category": "SECRET",
+        "start": 15,
+        "end": 25
+      }
+    ],
+    "targets": [
+      "python",
+      "js"
+    ]
+  },
+  {
+    "id": "street_address-13",
+    "text": "I live at 123 Main St, Irvine, CA 92618.",
+    "expected": [
+      {
+        "category": "STREET_ADDRESS",
+        "start": 10,
+        "end": 39
+      }
+    ],
+    "targets": [
+      "python",
+      "js"
+    ]
+  },
+  {
+    "id": "national_id-14",
+    "text": "身份证号 110105200001010016.",
+    "expected": [
+      {
+        "category": "NATIONAL_ID",
+        "start": 5,
+        "end": 23
+      }
+    ],
+    "targets": [
+      "python",
+      "js"
+    ]
+  },
+  {
+    "id": "date_of_birth-15",
+    "text": "Born 03/07/2009.",
+    "expected": [
+      {
+        "category": "DATE_OF_BIRTH",
+        "start": 5,
+        "end": 15
+      }
+    ],
+    "targets": [
+      "python",
+      "js"
+    ]
+  },
+  {
+    "id": "negative-0",
+    "text": "Meeting on 2026-11-15.",
+    "expected": [],
+    "targets": [
+      "python",
+      "js"
+    ]
+  },
+  {
+    "id": "negative-1",
+    "text": "Routing 123456789",
+    "expected": [],
+    "targets": [
+      "python",
+      "js"
+    ]
+  },
+  {
+    "id": "negative-2",
+    "text": "SSN 000123456",
+    "expected": [],
+    "targets": [
+      "python",
+      "js"
+    ]
+  },
+  {
+    "id": "negative-3",
+    "text": "Order 1380013800",
+    "expected": [],
+    "targets": [
+      "python",
+      "js"
+    ]
+  },
+  {
+    "id": "negative-4",
+    "text": "The high school students planted tomatoes.",
+    "expected": [],
+    "targets": [
+      "python",
+      "js"
+    ]
+  },
+  {
+    "id": "negative-5",
+    "text": "Version 3.11 costs $25.",
+    "expected": [],
+    "targets": [
+      "python",
+      "js"
+    ]
+  },
+  {
+    "id": "negative-6",
+    "text": "110105200001010017",
+    "expected": [],
+    "targets": [
+      "python",
+      "js"
+    ]
+  }
+]

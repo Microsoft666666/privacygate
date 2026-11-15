@@ -1,0 +1,13 @@
+{
+  "manifest_version": 3,
+  "name": "PrivacyGate (beta)",
+  "version": "0.4.0",
+  "description": "Review supported private patterns before sending chatbot messages. Local, no analytics.",
+  "permissions": ["storage"],
+  "action": {"default_popup": "popup.html"},
+  "content_scripts": [{
+    "matches": ["https://chatgpt.com/*", "https://claude.ai/*", "https://gemini.google.com/*"],
+    "js": ["patterns.js", "policies.js", "detector.js", "selectors.js", "content.js"],
+    "run_at": "document_idle"
+  }]
+}

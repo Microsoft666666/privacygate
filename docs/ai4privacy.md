@@ -1,0 +1,9 @@
+# Benchmark preparation
+
+Acknowledgment: AI4Privacy provides the synthetic [pii-masking-300k dataset](https://huggingface.co/datasets/ai4privacy/pii-masking-300k). Its [license](https://huggingface.co/datasets/ai4privacy/pii-masking-300k/blob/main/LICENSE.md) limits use to academic/non-commercial purposes; redistribution or derivative dissemination requires written permission. This repository contains no dataset rows. Only aggregate evaluation metrics may be committed.
+
+The viewer/card was inspected for `source_text`, `language`, and `privacy_mask` entries containing `label`, `start`, and `end`. The benchmark maps observed labels explicitly; unmapped labels are counted as not covered. TEL pools US_PHONE and INTL_PHONE for scoring. Names may be split into separate surname spans; streets and countries differ from the app's narrower categories. Exact and one-to-one overlap metrics expose these boundary mismatches. Predictions unmatched to the covered truth count as false positives, including predictions over unmapped annotations; this conservative choice can penalize useful detections.
+
+Run `python -m benchmarks.ai4privacy_eval --n 1000`, then `python -m benchmarks.report` once the report generator is available. Downloaded source caches remain under ignored `benchmarks/.cache/`. No cached source data, sample rows, or derived row files should be committed.
+
+The downloaded validation split was inspected directly: 47,728 rows with fields `source_text`, `target_text`, `privacy_mask`, `span_labels`, `mbert_text_tokens`, `mbert_bio_labels`, `id`, `language`, and `set`. English annotation labels observed: USERNAME, TIME, BOD, IDCARD, SEX, DRIVERLICENSE, DATE, STREET, GIVENNAME1, LASTNAME1, COUNTRY, BUILDING, CITY, STATE, POSTCODE, IP, PASSPORT, EMAIL, TEL, SOCIALNUMBER, SECADDRESS, PASS, LASTNAME2, LASTNAME3, TITLE, GIVENNAME2, GEOCOORD, CARDISSUER. The mapping includes given-name/surname labels and IP (IPv4 coverage only).

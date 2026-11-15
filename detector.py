@@ -1,6 +1,7 @@
 """Local, rule-based detection. Findings are hints, never identity verification."""
 from dataclasses import dataclass
 import re
+import os
 from ipaddress import IPv4Address
 from typing import Iterable
 
@@ -16,7 +17,7 @@ class Finding:
     origin: str = "automatic"
 
 
-PRIORITY = {"MANUAL_IDENTIFIER": 8, "MANUAL_ADDRESS": 8, "MANUAL_CONFIDENTIAL": 8, "USER_PHRASE": 8, "PARTIAL_DETAIL": 7, "IPV4": 1, "PAYMENT_CARD": 4, "SSN": 3, "EMAIL": 2, "US_PHONE": 1}
+PRIORITY = {"NATIONAL_ID": 5, "SCHOOL": 2, "LOCATION": 1, "PERSON": 1, "STREET_ADDRESS": 5, "SECRET": 6, "DATE_OF_BIRTH": 3, "BANK_ACCOUNT": 4, "INTL_PHONE": 1, "MANUAL_IDENTIFIER": 8, "MANUAL_ADDRESS": 8, "MANUAL_CONFIDENTIAL": 8, "USER_PHRASE": 8, "PARTIAL_DETAIL": 7, "IPV4": 1, "PAYMENT_CARD": 4, "SSN": 3, "EMAIL": 2, "US_PHONE": 1}
 EMAIL = re.compile(r"(?<![A-Za-z0-9.!#$%&'*+/=?^_`{|}~@-])[A-Za-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[A-Za-z0-9!#$%&'*+/=?^_`{|}~-]+)*@[A-Za-z0-9](?:[A-Za-z0-9-]*[A-Za-z0-9])?(?:\.[A-Za-z0-9](?:[A-Za-z0-9-]*[A-Za-z0-9])?)*\.[A-Za-z]{2,}(?![A-Za-z0-9_@-])")
 PHONE = re.compile(r"(?<![0-9A-Za-z])(?:\+?1[ .-]?)?(?:\([2-9][0-9]{2}\)[ .-]?|[2-9][0-9]{2}[ .-]?)[2-9][0-9]{2}[ .-]?[0-9]{4}(?![0-9A-Za-z])")
 SSN = re.compile(r"(?<![0-9])[0-9]{3}(?P<sep>[- ])[0-9]{2}(?P=sep)[0-9]{4}(?![0-9])")
@@ -82,7 +83,7 @@ def is_version_context(text: str, start: int) -> bool:
     return bool(version and not network)
 
 
-def detect(text: str, sensitive_phrases: tuple[SensitivePhrase, ...] = ()) -> list[Finding]:
+def detect(text: str, sensitive_phrases: tuple[SensitivePhrase, ...] = (), *, ner: bool | None = None) -> list[Finding]:
     findings: list[Finding] = []
     runs = list(NUMERIC_RUN.finditer(text))
     patterns = [
@@ -119,4 +120,14 @@ def detect(text: str, sensitive_phrases: tuple[SensitivePhrase, ...] = ()) -> li
                                     "Exact phrase marked sensitive by you, not inferred by the detector.",
                                     "user-provided", "user-provided"))
             start = text.find(rule.phrase, start + 1)
+    import recognizers
+    findings.extend(recognizers.find(text))
+    if ner_enabled() if ner is None else ner:
+        from recognizers.ner import find
+        findings.extend(find(text))
     return resolve_overlaps(findings)
+
+
+def ner_enabled():
+    from recognizers.ner import ner_status
+    return os.getenv('PRIVACYGATE_NER', '1') != '0' and ner_status()[0] == 'available'

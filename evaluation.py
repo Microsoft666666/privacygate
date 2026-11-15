@@ -14,9 +14,10 @@ class Case:
     text: str
     expected: tuple[Span, ...]
     sensitive_phrases: tuple[SensitivePhrase, ...] = ()
+    requires_ner: bool = False
 
 
-def annotated(name: str, *parts: str | tuple[str, str], sensitive_phrases: tuple[SensitivePhrase, ...] = ()) -> Case:
+def annotated(name: str, *parts: str | tuple[str, str], sensitive_phrases: tuple[SensitivePhrase, ...] = (), requires_ner: bool = False) -> Case:
     """Annotated fragments define ground truth independently of detector output."""
     text = ""
     spans = []
@@ -27,7 +28,7 @@ def annotated(name: str, *parts: str | tuple[str, str], sensitive_phrases: tuple
             text += value
         else:
             text += part
-    return Case(name, text, tuple(spans), sensitive_phrases)
+    return Case(name, text, tuple(spans), sensitive_phrases, requires_ner)
 
 
 DATASET = [
@@ -192,6 +193,71 @@ NEGATIVE_CONTROLS = [annotated(name, text) for name, text in [
     ("placeholder", "Contact [EMAIL_1] or [PHONE_1]."),
     ("names unmarked", "Fictional Alex Chen and Taylor Example met."),
 ]]
+
+
+# Independent hand-authored ground truth. Keep misses; do not tune annotations to output.
+REALISTIC = [
+    annotated('essay/contact', 'Please edit my scholarship essay. My email is ', ('EMAIL','alex@example.com'), '; keep the ending warm.'),
+    annotated('essay/callback', 'I led a garden project. The committee can call ', ('US_PHONE','949-555-0134'), ' for questions.'),
+    annotated('essay/name', "My name is ", ('PERSON','Alex Chen'), ', and volunteering changed how I think about leadership.', requires_ner=True),
+    annotated('essay/school', 'I organized a garden at ', ('SCHOOL','Northwood High School'), ' and trained new volunteers.', requires_ner=True),
+    annotated('essay/city', 'I grew up in ', ('LOCATION','Irvine'), ' and want to study environmental engineering.', requires_ner=True),
+    annotated('essay/birthday', 'I was born ', ('DATE_OF_BIRTH','March 7, 2009'), '. Should I remove that detail from my essay?'),
+    annotated('essay/address', 'Please polish this draft. I live at ', ('STREET_ADDRESS','123 Main St, Irvine, CA 92618'), ' near our garden.'),
+    annotated('essay/overseas', 'My mentor can reach me at ', ('INTL_PHONE','+44 20 7946 0958'), ' during the interview week.'),
+    annotated('essay/two-contacts', 'Proofread this signature: ', ('EMAIL','garden@example.org'), ' | ', ('US_PHONE','949-555-0135'), '.'),
+    annotated('essay/combination', "I'm ", ('PERSON','Alex Chen'), ' from ', ('SCHOOL','Northwood High School'), ' in ', ('LOCATION','Irvine'), '.', requires_ner=True),
+    annotated('essay/negative-reflection', 'Helping others taught me patience. Please make this paragraph clearer without changing my voice.'),
+    annotated('essay/negative-year', 'In 2026 our club planted 100 seeds and harvested 25 baskets.'),
+    annotated('essay/negative-generic', 'The high school students planted tomatoes and shared the harvest.'),
+    annotated('essay/negative-budget', 'We raised $1,234.56 and spent 20% on tools. Please shorten this sentence.'),
+    annotated('essay/negative-story', 'My family faced a difficult year. I am proud that I kept showing up for others.'),
+    annotated('homework/email', 'Can you explain this assignment? My class contact is ', ('EMAIL','student@example.org'), '.'),
+    annotated('homework/phone', 'Help draft a study-group invitation with my number ', ('US_PHONE','(949) 555-0134'), '.'),
+    annotated('homework/cn-phone', '请帮我整理学习计划。我的手机是 ', ('INTL_PHONE','138 0013 8000'), '。'),
+    annotated('homework/date', 'Help me fill out this practice form: DOB: ', ('DATE_OF_BIRTH','2009-03-07'), '.'),
+    annotated('homework/ssn', 'Explain why this sample form asks for SSN ', ('SSN','123456789'), '.'),
+    annotated('homework/national-id', '这个练习表格中的身份证号是 ', ('NATIONAL_ID','110105200001010016'), '。请解释这个字段。'),
+    annotated('homework/name', 'Write a polite tutoring request for ', ('PERSON','Jordan Lee'), '.', requires_ner=True),
+    annotated('homework/school', 'Help me write an invitation for students at ', ('SCHOOL','Stanford University'), '.', requires_ner=True),
+    annotated('homework/network', 'Explain this networking exercise: router ', ('IPV4','192.0.2.15'), ' cannot connect.'),
+    annotated('homework/marked', 'Please summarize ', ('USER_PHRASE','Project Falcon'), ' but keep its name private.', sensitive_phrases=(SensitivePhrase('Project Falcon'),)),
+    annotated('homework/negative-math', 'Explain why 2 + 2 = 4 and approximate pi as 3.14159.'),
+    annotated('homework/negative-meeting', 'Our study group meets on 2026-11-15. Please suggest an agenda.'),
+    annotated('homework/negative-room', 'Can you explain photosynthesis for class 204?'),
+    annotated('homework/negative-account', 'What does the account settings page do? Explain in simple language.'),
+    annotated('homework/negative-calendar', 'Make a revision plan for November 15, 2026, with 30-minute breaks.'),
+    annotated('coding/openai', 'Why does this request fail? api_key = "', ('SECRET','sk-'+'ab'*15), '"'),
+    annotated('coding/github', 'My CI config contains TOKEN="', ('SECRET','gh'+'p_'+'x'*36), '". Help debug authentication.'),
+    annotated('coding/database', 'The connection string is postgres://app:', ('SECRET','pw'*5), '@localhost/app. Why is login failing?'),
+    annotated('coding/password', 'The demo says password: ', ('SECRET','Hunter2'), '. Is the assignment syntax correct?'),
+    annotated('coding/aws', 'The access key is ', ('SECRET','AK'+'IA'+'A1'*8), '. Why does my upload fail?'),
+    annotated('coding/google', 'The browser script uses ', ('SECRET','AI'+'za'+'a'*35), ' as the credential.'),
+    annotated('coding/private-key', 'Please explain this config:\n', ('SECRET','-----BEGIN '+'PRIVATE KEY-----\nfictional\n-----END '+'PRIVATE KEY-----')),
+    annotated('coding/server', 'My service connects to ', ('IPV4','198.51.100.9'), '. Can you explain a timeout?'),
+    annotated('coding/email-log', 'This sample error mentions user ', ('EMAIL','alex@example.org'), ' and status 403.'),
+    annotated('coding/chinese-password', '我的密码是', ('SECRET','abcd1234'), '。这个设置为什么失败？'),
+    annotated('coding/negative-version', 'After upgrading to version 1.2.3.4, the test exits with code 1.'),
+    annotated('coding/negative-password-doc', 'Explain password hashing and why a salt should be random.'),
+    annotated('coding/negative-token-doc', 'The token counter shows 128 tokens. Explain how the counter works.'),
+    annotated('coding/negative-loop', 'for i in range(10): print(i) — why does the loop stop at 9?'),
+    annotated('coding/negative-url', 'Use https://example.com/docs for the documentation link in the footer.'),
+    annotated('forum/address', 'Please rewrite my lost-item post. Return it to ', ('STREET_ADDRESS','123 Main St'), '.'),
+    annotated('forum/phone', 'Selling my old desk. Text ', ('US_PHONE','949-555-0134'), ' to arrange pickup.'),
+    annotated('forum/email', 'Volunteers wanted! Email ', ('EMAIL','garden@example.com'), ' for details.'),
+    annotated('forum/bank', 'The draft donation instructions say routing ', ('BANK_ACCOUNT','011000015'), ' and account ', ('BANK_ACCOUNT','000123456789'), '.'),
+    annotated('forum/iban', 'Please shorten this donation post: IBAN ', ('BANK_ACCOUNT','GB82 WEST 1234 5698 7654 32'), '.'),
+    annotated('forum/card', 'I accidentally put card ', ('PAYMENT_CARD','4111 1111 1111 1111'), ' in this support post. Help remove it.'),
+    annotated('forum/national-id', '证件号码 ', ('NATIONAL_ID','440304201003150026'), ' 不应该出现在公开帖子里。'),
+    annotated('forum/birthday', 'Please edit the party invite. My birthday is ', ('DATE_OF_BIRTH','7 March 2009'), '.'),
+    annotated('forum/city', 'Recommend a community garden in ', ('LOCATION','London'), ' for my draft question.', requires_ner=True),
+    annotated('forum/partial', 'Does this draft hide enough? Contact ', ('PARTIAL_DETAIL','[PARTIAL_EMAIL_1: a•••m]'), '.'),
+    annotated('forum/negative-price', 'Selling a desk for $25. It is 120 cm wide and has two drawers.'),
+    annotated('forum/negative-event', 'The cleanup starts on 2026-11-15. Bring gloves and a reusable bottle.'),
+    annotated('forum/negative-short-id', 'The book club ticket is 12345678. Please make this post friendly.'),
+    annotated('forum/negative-general', 'What are some beginner-friendly vegetables for a small balcony?'),
+    annotated('forum/negative-time', 'The library opens at 9:30 and closes at 18:00. Please format this schedule.'),
+]
 
 
 def reports() -> dict:

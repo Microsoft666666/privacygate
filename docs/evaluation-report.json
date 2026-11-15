@@ -1,0 +1,1262 @@
+{
+  "datasets": {
+    "Baseline \u00b7 original 37": {
+      "messages": 37,
+      "tp": 24,
+      "fp": 1,
+      "fn": 2,
+      "precision": 0.96,
+      "recall": 0.9230769230769231,
+      "f1": 0.9411764705882353,
+      "cases": [
+        {
+          "case": "empty",
+          "tp": 0,
+          "fp": 0,
+          "fn": 0,
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "result": "PASS"
+        },
+        {
+          "case": "ordinary prose",
+          "tp": 0,
+          "fp": 0,
+          "fn": 0,
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "result": "PASS"
+        },
+        {
+          "case": "year",
+          "tp": 0,
+          "fp": 0,
+          "fn": 0,
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "result": "PASS"
+        },
+        {
+          "case": "price",
+          "tp": 0,
+          "fp": 0,
+          "fn": 0,
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "result": "PASS"
+        },
+        {
+          "case": "date",
+          "tp": 0,
+          "fp": 0,
+          "fn": 0,
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "result": "PASS"
+        },
+        {
+          "case": "short ID",
+          "tp": 0,
+          "fp": 0,
+          "fn": 0,
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "result": "PASS"
+        },
+        {
+          "case": "ambiguous ten-digit ID",
+          "tp": 0,
+          "fp": 1,
+          "fn": 0,
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "result": "FAIL"
+        },
+        {
+          "case": "long invalid ID",
+          "tp": 0,
+          "fp": 0,
+          "fn": 0,
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "result": "PASS"
+        },
+        {
+          "case": "invalid checksum",
+          "tp": 0,
+          "fp": 0,
+          "fn": 0,
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "result": "PASS"
+        },
+        {
+          "case": "zero run",
+          "tp": 0,
+          "fp": 0,
+          "fn": 0,
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "result": "PASS"
+        },
+        {
+          "case": "version",
+          "tp": 0,
+          "fp": 0,
+          "fn": 0,
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "result": "PASS"
+        },
+        {
+          "case": "plain email",
+          "tp": 1,
+          "fp": 0,
+          "fn": 0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "result": "PASS"
+        },
+        {
+          "case": "email punctuation",
+          "tp": 1,
+          "fp": 0,
+          "fn": 0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "result": "PASS"
+        },
+        {
+          "case": "email tag",
+          "tp": 1,
+          "fp": 0,
+          "fn": 0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "result": "PASS"
+        },
+        {
+          "case": "email subdomain",
+          "tp": 1,
+          "fp": 0,
+          "fn": 0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "result": "PASS"
+        },
+        {
+          "case": "email repeated",
+          "tp": 2,
+          "fp": 0,
+          "fn": 0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "result": "PASS"
+        },
+        {
+          "case": "Unicode nearby",
+          "tp": 1,
+          "fp": 0,
+          "fn": 0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "result": "PASS"
+        },
+        {
+          "case": "missing domain",
+          "tp": 0,
+          "fp": 0,
+          "fn": 0,
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "result": "PASS"
+        },
+        {
+          "case": "missing suffix",
+          "tp": 0,
+          "fp": 0,
+          "fn": 0,
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "result": "PASS"
+        },
+        {
+          "case": "dashed phone",
+          "tp": 1,
+          "fp": 0,
+          "fn": 0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "result": "PASS"
+        },
+        {
+          "case": "parenthesized phone",
+          "tp": 1,
+          "fp": 0,
+          "fn": 0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "result": "PASS"
+        },
+        {
+          "case": "compact phone",
+          "tp": 1,
+          "fp": 0,
+          "fn": 0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "result": "PASS"
+        },
+        {
+          "case": "country phone",
+          "tp": 1,
+          "fp": 0,
+          "fn": 0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "result": "PASS"
+        },
+        {
+          "case": "dotted phone",
+          "tp": 1,
+          "fp": 0,
+          "fn": 0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "result": "PASS"
+        },
+        {
+          "case": "repeated phone",
+          "tp": 2,
+          "fp": 0,
+          "fn": 0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "result": "PASS"
+        },
+        {
+          "case": "short phone",
+          "tp": 0,
+          "fp": 0,
+          "fn": 0,
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "result": "PASS"
+        },
+        {
+          "case": "SSN shaped",
+          "tp": 1,
+          "fp": 0,
+          "fn": 0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "result": "PASS"
+        },
+        {
+          "case": "SSN spaced",
+          "tp": 1,
+          "fp": 0,
+          "fn": 0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "result": "PASS"
+        },
+        {
+          "case": "SSN inconsistent",
+          "tp": 0,
+          "fp": 0,
+          "fn": 0,
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "result": "PASS"
+        },
+        {
+          "case": "card compact",
+          "tp": 1,
+          "fp": 0,
+          "fn": 0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "result": "PASS"
+        },
+        {
+          "case": "card spaced",
+          "tp": 1,
+          "fp": 0,
+          "fn": 0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "result": "PASS"
+        },
+        {
+          "case": "card dashed",
+          "tp": 1,
+          "fp": 0,
+          "fn": 0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "result": "PASS"
+        },
+        {
+          "case": "second test card",
+          "tp": 1,
+          "fp": 0,
+          "fn": 0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "result": "PASS"
+        },
+        {
+          "case": "mixed multiline",
+          "tp": 2,
+          "fp": 0,
+          "fn": 0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "result": "PASS"
+        },
+        {
+          "case": "mixed card SSN",
+          "tp": 2,
+          "fp": 0,
+          "fn": 0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "result": "PASS"
+        },
+        {
+          "case": "nonbreaking phone spaces unsupported",
+          "tp": 0,
+          "fp": 0,
+          "fn": 1,
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "result": "FAIL"
+        },
+        {
+          "case": "quoted email unsupported",
+          "tp": 0,
+          "fp": 0,
+          "fn": 1,
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "result": "FAIL"
+        }
+      ],
+      "per_category": {
+        "EMAIL": {
+          "tp": 8,
+          "fp": 0,
+          "fn": 1,
+          "precision": 1.0,
+          "recall": 0.8888888888888888,
+          "f1": 0.9411764705882353
+        },
+        "PAYMENT_CARD": {
+          "tp": 5,
+          "fp": 0,
+          "fn": 0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0
+        },
+        "SSN": {
+          "tp": 3,
+          "fp": 0,
+          "fn": 0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0
+        },
+        "US_PHONE": {
+          "tp": 8,
+          "fp": 1,
+          "fn": 1,
+          "precision": 0.8888888888888888,
+          "recall": 0.8888888888888888,
+          "f1": 0.8888888888888888
+        }
+      },
+      "errors": [
+        {
+          "case": "ambiguous ten-digit ID",
+          "error": "Incorrectly flagged",
+          "category": "US_PHONE",
+          "start": 24,
+          "end": 34,
+          "count": 1,
+          "synthetic_text": "Fictional inventory ID: 9495550199."
+        },
+        {
+          "case": "nonbreaking phone spaces unsupported",
+          "error": "Missed",
+          "category": "US_PHONE",
+          "start": 0,
+          "end": 17,
+          "count": 1,
+          "synthetic_text": "+1 (949)\u00a0555\u00a00134"
+        },
+        {
+          "case": "quoted email unsupported",
+          "error": "Missed",
+          "category": "EMAIL",
+          "start": 0,
+          "end": 25,
+          "count": 1,
+          "synthetic_text": "\"alex garden\"@example.com"
+        }
+      ]
+    },
+    "Adversarial \u00b7 extended": {
+      "messages": 52,
+      "tp": 38,
+      "fp": 1,
+      "fn": 8,
+      "precision": 0.9743589743589743,
+      "recall": 0.8260869565217391,
+      "f1": 0.8941176470588236,
+      "cases": [
+        {
+          "case": "angle email",
+          "tp": 1,
+          "fp": 0,
+          "fn": 0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "result": "PASS"
+        },
+        {
+          "case": "bracket email",
+          "tp": 1,
+          "fp": 0,
+          "fn": 0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "result": "PASS"
+        },
+        {
+          "case": "uppercase email",
+          "tp": 1,
+          "fp": 0,
+          "fn": 0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "result": "PASS"
+        },
+        {
+          "case": "email apostrophe",
+          "tp": 1,
+          "fp": 0,
+          "fn": 0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "result": "PASS"
+        },
+        {
+          "case": "email unicode adjacency",
+          "tp": 1,
+          "fp": 0,
+          "fn": 0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "result": "PASS"
+        },
+        {
+          "case": "email repeated newlines",
+          "tp": 2,
+          "fp": 0,
+          "fn": 0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "result": "PASS"
+        },
+        {
+          "case": "email malformed double dots",
+          "tp": 0,
+          "fp": 0,
+          "fn": 0,
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "result": "PASS"
+        },
+        {
+          "case": "email trailing punctuation",
+          "tp": 1,
+          "fp": 0,
+          "fn": 0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "result": "PASS"
+        },
+        {
+          "case": "email quoted local part",
+          "tp": 0,
+          "fp": 0,
+          "fn": 1,
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "result": "FAIL"
+        },
+        {
+          "case": "email international domain",
+          "tp": 0,
+          "fp": 0,
+          "fn": 1,
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "result": "FAIL"
+        },
+        {
+          "case": "phone country compact",
+          "tp": 1,
+          "fp": 0,
+          "fn": 0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "result": "PASS"
+        },
+        {
+          "case": "phone country parens",
+          "tp": 1,
+          "fp": 0,
+          "fn": 0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "result": "PASS"
+        },
+        {
+          "case": "phone Unicode adjacent",
+          "tp": 1,
+          "fp": 0,
+          "fn": 0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "result": "PASS"
+        },
+        {
+          "case": "phone tab separators",
+          "tp": 0,
+          "fp": 0,
+          "fn": 1,
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "result": "FAIL"
+        },
+        {
+          "case": "phone NBSP separators",
+          "tp": 0,
+          "fp": 0,
+          "fn": 1,
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "result": "FAIL"
+        },
+        {
+          "case": "phone extension",
+          "tp": 1,
+          "fp": 0,
+          "fn": 0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "result": "PASS"
+        },
+        {
+          "case": "phone invalid area",
+          "tp": 0,
+          "fp": 0,
+          "fn": 0,
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "result": "PASS"
+        },
+        {
+          "case": "phone ID collision",
+          "tp": 0,
+          "fp": 1,
+          "fn": 0,
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "result": "FAIL"
+        },
+        {
+          "case": "phone two space-separated",
+          "tp": 0,
+          "fp": 0,
+          "fn": 2,
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "result": "FAIL"
+        },
+        {
+          "case": "phone repetition punctuation",
+          "tp": 2,
+          "fp": 0,
+          "fn": 0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "result": "PASS"
+        },
+        {
+          "case": "card within parentheses",
+          "tp": 1,
+          "fp": 0,
+          "fn": 0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "result": "PASS"
+        },
+        {
+          "case": "card 13 digit test",
+          "tp": 1,
+          "fp": 0,
+          "fn": 0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "result": "PASS"
+        },
+        {
+          "case": "card invalid length 12",
+          "tp": 0,
+          "fp": 0,
+          "fn": 0,
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "result": "PASS"
+        },
+        {
+          "case": "card invalid checksum long",
+          "tp": 0,
+          "fp": 0,
+          "fn": 0,
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "result": "PASS"
+        },
+        {
+          "case": "card excessive length",
+          "tp": 0,
+          "fp": 0,
+          "fn": 0,
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "result": "PASS"
+        },
+        {
+          "case": "card tabs unsupported",
+          "tp": 0,
+          "fp": 0,
+          "fn": 1,
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "result": "FAIL"
+        },
+        {
+          "case": "card and phone punctuation",
+          "tp": 2,
+          "fp": 0,
+          "fn": 0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "result": "PASS"
+        },
+        {
+          "case": "card Unicode adjacent",
+          "tp": 1,
+          "fp": 0,
+          "fn": 0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "result": "PASS"
+        },
+        {
+          "case": "SSN fictional zeros",
+          "tp": 1,
+          "fp": 0,
+          "fn": 0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "result": "PASS"
+        },
+        {
+          "case": "SSN spaced fiction",
+          "tp": 1,
+          "fp": 0,
+          "fn": 0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "result": "PASS"
+        },
+        {
+          "case": "SSN NBSP unsupported",
+          "tp": 0,
+          "fp": 0,
+          "fn": 1,
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "result": "FAIL"
+        },
+        {
+          "case": "SSN short",
+          "tp": 0,
+          "fp": 0,
+          "fn": 0,
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "result": "PASS"
+        },
+        {
+          "case": "SSN repeated",
+          "tp": 2,
+          "fp": 0,
+          "fn": 0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "result": "PASS"
+        },
+        {
+          "case": "IP documentation net",
+          "tp": 1,
+          "fp": 0,
+          "fn": 0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "result": "PASS"
+        },
+        {
+          "case": "IP octet boundary",
+          "tp": 1,
+          "fp": 0,
+          "fn": 0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "result": "PASS"
+        },
+        {
+          "case": "IP zero boundary",
+          "tp": 1,
+          "fp": 0,
+          "fn": 0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "result": "PASS"
+        },
+        {
+          "case": "IP invalid octet",
+          "tp": 0,
+          "fp": 0,
+          "fn": 0,
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "result": "PASS"
+        },
+        {
+          "case": "IP leading zero invalid",
+          "tp": 0,
+          "fp": 0,
+          "fn": 0,
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "result": "PASS"
+        },
+        {
+          "case": "IP five components",
+          "tp": 0,
+          "fp": 0,
+          "fn": 0,
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "result": "PASS"
+        },
+        {
+          "case": "IP sentence punctuation",
+          "tp": 1,
+          "fp": 0,
+          "fn": 0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "result": "PASS"
+        },
+        {
+          "case": "IP version collision",
+          "tp": 0,
+          "fp": 0,
+          "fn": 0,
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "result": "PASS"
+        },
+        {
+          "case": "IP and email",
+          "tp": 2,
+          "fp": 0,
+          "fn": 0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "result": "PASS"
+        },
+        {
+          "case": "year and room",
+          "tp": 0,
+          "fp": 0,
+          "fn": 0,
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "result": "PASS"
+        },
+        {
+          "case": "prices and date",
+          "tp": 0,
+          "fp": 0,
+          "fn": 0,
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "result": "PASS"
+        },
+        {
+          "case": "mixed Unicode multiline",
+          "tp": 2,
+          "fp": 0,
+          "fn": 0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "result": "PASS"
+        },
+        {
+          "case": "confidential phrase repeat",
+          "tp": 2,
+          "fp": 0,
+          "fn": 0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "result": "PASS"
+        },
+        {
+          "case": "confidential literal punctuation",
+          "tp": 1,
+          "fp": 0,
+          "fn": 0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "result": "PASS"
+        },
+        {
+          "case": "confidential absent negative",
+          "tp": 0,
+          "fp": 0,
+          "fn": 0,
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "result": "PASS"
+        },
+        {
+          "case": "manual identifier",
+          "tp": 1,
+          "fp": 0,
+          "fn": 0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "result": "PASS"
+        },
+        {
+          "case": "manual address",
+          "tp": 1,
+          "fp": 0,
+          "fn": 0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "result": "PASS"
+        },
+        {
+          "case": "manual confidential",
+          "tp": 1,
+          "fp": 0,
+          "fn": 0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "result": "PASS"
+        },
+        {
+          "case": "partial marker",
+          "tp": 1,
+          "fp": 0,
+          "fn": 0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "result": "PASS"
+        }
+      ],
+      "per_category": {
+        "EMAIL": {
+          "tp": 10,
+          "fp": 0,
+          "fn": 2,
+          "precision": 1.0,
+          "recall": 0.8333333333333334,
+          "f1": 0.9090909090909091
+        },
+        "IPV4": {
+          "tp": 5,
+          "fp": 0,
+          "fn": 0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0
+        },
+        "MANUAL_ADDRESS": {
+          "tp": 1,
+          "fp": 0,
+          "fn": 0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0
+        },
+        "MANUAL_CONFIDENTIAL": {
+          "tp": 1,
+          "fp": 0,
+          "fn": 0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0
+        },
+        "MANUAL_IDENTIFIER": {
+          "tp": 1,
+          "fp": 0,
+          "fn": 0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0
+        },
+        "PARTIAL_DETAIL": {
+          "tp": 1,
+          "fp": 0,
+          "fn": 0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0
+        },
+        "PAYMENT_CARD": {
+          "tp": 4,
+          "fp": 0,
+          "fn": 1,
+          "precision": 1.0,
+          "recall": 0.8,
+          "f1": 0.8888888888888888
+        },
+        "SSN": {
+          "tp": 4,
+          "fp": 0,
+          "fn": 1,
+          "precision": 1.0,
+          "recall": 0.8,
+          "f1": 0.8888888888888888
+        },
+        "USER_PHRASE": {
+          "tp": 3,
+          "fp": 0,
+          "fn": 0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0
+        },
+        "US_PHONE": {
+          "tp": 8,
+          "fp": 1,
+          "fn": 4,
+          "precision": 0.8888888888888888,
+          "recall": 0.6666666666666666,
+          "f1": 0.7619047619047619
+        }
+      },
+      "errors": [
+        {
+          "case": "email quoted local part",
+          "error": "Missed",
+          "category": "EMAIL",
+          "start": 0,
+          "end": 28,
+          "count": 1,
+          "synthetic_text": "\"fiction garden\"@example.org"
+        },
+        {
+          "case": "email international domain",
+          "error": "Missed",
+          "category": "EMAIL",
+          "start": 0,
+          "end": 10,
+          "count": 1,
+          "synthetic_text": "alex@\u4f8b\u5b50.\u6d4b\u8bd5"
+        },
+        {
+          "case": "phone tab separators",
+          "error": "Missed",
+          "category": "US_PHONE",
+          "start": 0,
+          "end": 12,
+          "count": 1,
+          "synthetic_text": "949\t555\t0134"
+        },
+        {
+          "case": "phone NBSP separators",
+          "error": "Missed",
+          "category": "US_PHONE",
+          "start": 0,
+          "end": 12,
+          "count": 1,
+          "synthetic_text": "949\u00a0555\u00a00134"
+        },
+        {
+          "case": "phone ID collision",
+          "error": "Incorrectly flagged",
+          "category": "US_PHONE",
+          "start": 14,
+          "end": 24,
+          "count": 1,
+          "synthetic_text": "Inventory ID: 9495550188"
+        },
+        {
+          "case": "phone two space-separated",
+          "error": "Missed",
+          "category": "US_PHONE",
+          "start": 0,
+          "end": 10,
+          "count": 1,
+          "synthetic_text": "9495550134 9495550135"
+        },
+        {
+          "case": "phone two space-separated",
+          "error": "Missed",
+          "category": "US_PHONE",
+          "start": 11,
+          "end": 21,
+          "count": 1,
+          "synthetic_text": "9495550134 9495550135"
+        },
+        {
+          "case": "card tabs unsupported",
+          "error": "Missed",
+          "category": "PAYMENT_CARD",
+          "start": 0,
+          "end": 19,
+          "count": 1,
+          "synthetic_text": "4111\t1111\t1111\t1111"
+        },
+        {
+          "case": "SSN NBSP unsupported",
+          "error": "Missed",
+          "category": "SSN",
+          "start": 0,
+          "end": 11,
+          "count": 1,
+          "synthetic_text": "000\u00a012\u00a03456"
+        }
+      ]
+    },
+    "Negative controls": {
+      "messages": 10,
+      "tp": 0,
+      "fp": 0,
+      "fn": 0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "cases": [
+        {
+          "case": "school question",
+          "tp": 0,
+          "fp": 0,
+          "fn": 0,
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "result": "PASS"
+        },
+        {
+          "case": "calendar",
+          "tp": 0,
+          "fp": 0,
+          "fn": 0,
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "result": "PASS"
+        },
+        {
+          "case": "math",
+          "tp": 0,
+          "fp": 0,
+          "fn": 0,
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "result": "PASS"
+        },
+        {
+          "case": "currency",
+          "tp": 0,
+          "fp": 0,
+          "fn": 0,
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "result": "PASS"
+        },
+        {
+          "case": "short numeric ID",
+          "tp": 0,
+          "fp": 0,
+          "fn": 0,
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "result": "PASS"
+        },
+        {
+          "case": "count",
+          "tp": 0,
+          "fp": 0,
+          "fn": 0,
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "result": "PASS"
+        },
+        {
+          "case": "IPv6 unsupported",
+          "tp": 0,
+          "fp": 0,
+          "fn": 0,
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "result": "PASS"
+        },
+        {
+          "case": "invalid IPv4",
+          "tp": 0,
+          "fp": 0,
+          "fn": 0,
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "result": "PASS"
+        },
+        {
+          "case": "placeholder",
+          "tp": 0,
+          "fp": 0,
+          "fn": 0,
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "result": "PASS"
+        },
+        {
+          "case": "names unmarked",
+          "tp": 0,
+          "fp": 0,
+          "fn": 0,
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "result": "PASS"
+        }
+      ],
+      "per_category": {},
+      "errors": []
+    }
+  },
+  "latency": {
+    "characters": 1000,
+    "runs": 100,
+    "median_ms": 0.16377049999999999
+  }
+}

@@ -3,7 +3,7 @@
 Decisions contain metadata only. No message, finding value, or error payload is logged.
 """
 from dataclasses import dataclass
-from detector import detect
+from detector import detect, ner_enabled
 from policy import evaluate_policy, review_fingerprint
 
 
@@ -16,17 +16,19 @@ class Decision:
     message: str
     fingerprint: str | None = None
     counts: tuple[tuple[str, int], ...] = ()
+    combination: tuple[str, ...] = ()
 
 
 def evaluate_submission(final_text: str, destination: str, confirmations: str | None = None,
-                        context: str = "", sensitive_phrases: tuple = ()) -> Decision:
+                        context: str = "", sensitive_phrases: tuple = (), *, ner: bool | None = None, ignore_values=()) -> Decision:
     try:
         if not isinstance(final_text, str) or not isinstance(destination, str):
             raise ValueError("Invalid input")
         # Both operations run every time, including copy and direct backend calls.
-        findings = detect(final_text, sensitive_phrases) if sensitive_phrases else detect(final_text)
+        effective_ner = ner_enabled() if ner is None else ner
+        findings = [f for f in detect(final_text, sensitive_phrases, ner=effective_ner) if f.matched_text not in ignore_values]
         decision = evaluate_policy(findings, destination)
-        fingerprint = review_fingerprint(final_text, destination, context, sensitive_phrases)
+        fingerprint = review_fingerprint(final_text, destination, context, sensitive_phrases, ner=effective_ner, ignore_values=ignore_values)
         categories = tuple(sorted({f.category for f in findings}))
         reasons = tuple(f"{action}: {', '.join(sorted({f.category for f in group}))}"
                         for action, group in decision.findings_by_action.items() if group)
@@ -40,7 +42,7 @@ def evaluate_submission(final_text: str, destination: str, confirmations: str | 
             message = "Not sent — acknowledgement required. " + message
         else:
             message = "Not sent — policy blocked. " + message
-        return Decision(decision.overall_action, accepted, categories, reasons, message, fingerprint, counts)
+        return Decision(decision.overall_action, accepted, categories, reasons, message, fingerprint, counts, decision.combination)
     except Exception:
         # Never display exception messages: third-party exceptions may echo input.
         return Decision("BLOCK", False, (), ("Validation unavailable",),
